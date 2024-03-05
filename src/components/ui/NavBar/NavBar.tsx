@@ -1,7 +1,8 @@
 'use client'
 import { useState } from "react"
-import { IconUsers, IconSword, IconListCheck, IconPackage } from "@tabler/icons-react"
-import { Tooltip, Stack, UnstyledButton } from "@mantine/core"
+import { IconUsers, IconSword, IconListCheck, IconPackage, IconTrophy, IconSettings, IconFeather, IconCalendar, IconFishHook, IconCards, IconArmchair, IconSwitchHorizontal } from "@tabler/icons-react"
+import { Tooltip, Stack, UnstyledButton, rem } from "@mantine/core"
+import classes from './NavBar.module.css'
 
 interface NavBarLinkProps {
   icon: typeof IconUsers
@@ -13,7 +14,7 @@ interface NavBarLinkProps {
 function NavBarLink({ icon: Icon, label, active, onClick }: NavBarLinkProps) {
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton onClick={onClick} data-active={active || undefined}>
+      <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
         <Icon />
       </UnstyledButton>
     </Tooltip>
@@ -23,8 +24,15 @@ function NavBarLink({ icon: Icon, label, active, onClick }: NavBarLinkProps) {
 const navdata = [
   { icon: IconUsers, label: 'Characters' },
   { icon: IconSword, label: 'Weapons' },
-  { icon: IconListCheck, label: 'Planner'},
-  { icon: IconPackage, label: 'Inventory' }
+  { icon: IconFeather, label: 'Artifacts' },
+  { icon: IconListCheck, label: 'Planner' },
+  { icon: IconPackage, label: 'Inventory' },
+  { icon: IconTrophy, label: 'Achievements' },
+  { icon: IconFishHook, label: 'Fishing' },
+  { icon: IconCards, label: 'TCG' },
+  { icon: IconArmchair, label: 'Furnishing'},
+  { icon: IconCalendar, label: 'Calendar' },
+  { icon: IconSettings, label: 'Settings' }
 ]
 
 export function NavBar() {
@@ -40,9 +48,13 @@ export function NavBar() {
   ))
 
   return (
-    <nav>
+    <nav className={classes.navbar}>
       <Stack justify="center">
         {links}
+      </Stack>
+
+      <Stack justify="center">
+        <NavBarLink icon={IconSwitchHorizontal} label="Switch game" />
       </Stack>
     </nav>
   )
