@@ -11,238 +11,683 @@ export type Database = {
     Tables: {
       genshin_achievements: {
         Row: {
-          category: string | null
-          commission: boolean | null
+          achievement_name: string
+          category: string
+          commission: boolean
           id: number
-          name: string | null
-          primogem_one: number | null
+          linked_commission: string | null
+          primogem_one: number
           primogem_three: string | null
           primogem_two: string | null
-          tier_one: string | null
+          tier_one: string
           tier_three: string | null
           tier_two: string | null
-          tiered: boolean | null
-          version: number | null
+          tiered: boolean
+          version: number
         }
         Insert: {
-          category?: string | null
-          commission?: boolean | null
-          id: number
-          name?: string | null
-          primogem_one?: number | null
+          achievement_name: string
+          category: string
+          commission: boolean
+          id?: number
+          linked_commission?: string | null
+          primogem_one: number
           primogem_three?: string | null
           primogem_two?: string | null
-          tier_one?: string | null
+          tier_one: string
           tier_three?: string | null
           tier_two?: string | null
-          tiered?: boolean | null
-          version?: number | null
+          tiered: boolean
+          version: number
         }
         Update: {
-          category?: string | null
-          commission?: boolean | null
+          achievement_name?: string
+          category?: string
+          commission?: boolean
           id?: number
-          name?: string | null
-          primogem_one?: number | null
+          linked_commission?: string | null
+          primogem_one?: number
           primogem_three?: string | null
           primogem_two?: string | null
-          tier_one?: string | null
+          tier_one?: string
           tier_three?: string | null
           tier_two?: string | null
-          tiered?: boolean | null
-          version?: number | null
+          tiered?: boolean
+          version?: number
         }
         Relationships: []
       }
       genshin_artifacts: {
         Row: {
-          "2_bonus": string | null
+          "2_bonus": string
           "4_bonus": string | null
           circlet_description: string | null
           circlet_name: string | null
+          file_set_name: string
           flower_description: string | null
           flower_name: string | null
           goblet_description: string | null
           goblet_name: string | null
           id: number
-          max_rarity: number | null
-          min_rarity: number | null
+          max_rarity: number
+          min_rarity: number
           plume_description: string | null
           plume_name: string | null
-          prayer: boolean | null
+          prayer: boolean
           sands_description: string | null
           sands_name: string | null
-          set_name: string | null
+          set_name: string
         }
         Insert: {
-          "2_bonus"?: string | null
+          "2_bonus": string
           "4_bonus"?: string | null
           circlet_description?: string | null
           circlet_name?: string | null
-          flower_description?: string | null
-          flower_name?: string | null
-          goblet_description?: string | null
-          goblet_name?: string | null
-          id: number
-          max_rarity?: number | null
-          min_rarity?: number | null
-          plume_description?: string | null
-          plume_name?: string | null
-          prayer?: boolean | null
-          sands_description?: string | null
-          sands_name?: string | null
-          set_name?: string | null
-        }
-        Update: {
-          "2_bonus"?: string | null
-          "4_bonus"?: string | null
-          circlet_description?: string | null
-          circlet_name?: string | null
+          file_set_name: string
           flower_description?: string | null
           flower_name?: string | null
           goblet_description?: string | null
           goblet_name?: string | null
           id?: number
-          max_rarity?: number | null
-          min_rarity?: number | null
+          max_rarity: number
+          min_rarity: number
           plume_description?: string | null
           plume_name?: string | null
-          prayer?: boolean | null
+          prayer: boolean
           sands_description?: string | null
           sands_name?: string | null
-          set_name?: string | null
+          set_name: string
+        }
+        Update: {
+          "2_bonus"?: string
+          "4_bonus"?: string | null
+          circlet_description?: string | null
+          circlet_name?: string | null
+          file_set_name?: string
+          flower_description?: string | null
+          flower_name?: string | null
+          goblet_description?: string | null
+          goblet_name?: string | null
+          id?: number
+          max_rarity?: number
+          min_rarity?: number
+          plume_description?: string | null
+          plume_name?: string | null
+          prayer?: boolean
+          sands_description?: string | null
+          sands_name?: string | null
+          set_name?: string
         }
         Relationships: []
       }
-      genshin_characters: {
+      genshin_bosses: {
         Row: {
-          atk: Json | null
-          birthday: string | null
-          boss_drop: string | null
-          common_drop: string | null
-          constellation: string | null
-          constellation_3: string | null
-          constellation_5: string | null
-          constellations: Json | null
-          def: Json | null
-          description: string | null
-          element: string | null
-          hp: Json | null
+          boss_drop: string
+          boss_name: string
+          boss_name_long: string
           id: number
-          local_specialty: string | null
-          name: string | null
-          rarity: number | null
-          release: string | null
-          special: Json | null
-          talent_book: string | null
-          talents: Json | null
-          version: number | null
-          voice_actors: Json | null
-          weapon: string | null
-          weekly_drop: string | null
+          other_drops: string[]
         }
         Insert: {
-          atk?: Json | null
-          birthday?: string | null
-          boss_drop?: string | null
-          common_drop?: string | null
-          constellation?: string | null
-          constellation_3?: string | null
-          constellation_5?: string | null
-          constellations?: Json | null
-          def?: Json | null
-          description?: string | null
-          element?: string | null
-          hp?: Json | null
+          boss_drop: string
+          boss_name: string
+          boss_name_long: string
           id?: number
-          local_specialty?: string | null
-          name?: string | null
-          rarity?: number | null
-          release?: string | null
-          special?: Json | null
-          talent_book?: string | null
-          talents?: Json | null
-          version?: number | null
-          voice_actors?: Json | null
-          weapon?: string | null
-          weekly_drop?: string | null
+          other_drops: string[]
         }
         Update: {
-          atk?: Json | null
-          birthday?: string | null
-          boss_drop?: string | null
-          common_drop?: string | null
-          constellation?: string | null
+          boss_drop?: string
+          boss_name?: string
+          boss_name_long?: string
+          id?: number
+          other_drops?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_genshin_bosses_boss_drop_fkey"
+            columns: ["boss_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          }
+        ]
+      }
+      genshin_characters: {
+        Row: {
+          atk: Json
+          birthday: string
+          boss_drop: string
+          char_description: string
+          char_name: string
+          common_drop: string
+          constellation: string
+          constellation_3: string | null
+          constellation_5: string | null
+          constellations: Json
+          def: Json
+          element: string
+          hp: Json
+          id: number
+          local_specialty: string
+          rarity: number
+          release: string
+          special: Json
+          talent_book: string
+          talents: Json
+          version: number
+          voice_actors: Json
+          weapon_type: string
+          weekly_drop: string
+        }
+        Insert: {
+          atk?: Json
+          birthday: string
+          boss_drop: string
+          char_description: string
+          char_name: string
+          common_drop: string
+          constellation: string
           constellation_3?: string | null
           constellation_5?: string | null
-          constellations?: Json | null
-          def?: Json | null
-          description?: string | null
-          element?: string | null
-          hp?: Json | null
+          constellations?: Json
+          def?: Json
+          element: string
+          hp?: Json
           id?: number
-          local_specialty?: string | null
-          name?: string | null
-          rarity?: number | null
-          release?: string | null
-          special?: Json | null
-          talent_book?: string | null
-          talents?: Json | null
-          version?: number | null
-          voice_actors?: Json | null
-          weapon?: string | null
-          weekly_drop?: string | null
+          local_specialty: string
+          rarity: number
+          release: string
+          special?: Json
+          talent_book: string
+          talents?: Json
+          version: number
+          voice_actors?: Json
+          weapon_type: string
+          weekly_drop: string
+        }
+        Update: {
+          atk?: Json
+          birthday?: string
+          boss_drop?: string
+          char_description?: string
+          char_name?: string
+          common_drop?: string
+          constellation?: string
+          constellation_3?: string | null
+          constellation_5?: string | null
+          constellations?: Json
+          def?: Json
+          element?: string
+          hp?: Json
+          id?: number
+          local_specialty?: string
+          rarity?: number
+          release?: string
+          special?: Json
+          talent_book?: string
+          talents?: Json
+          version?: number
+          voice_actors?: Json
+          weapon_type?: string
+          weekly_drop?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_genshin_characters_boss_drop_fkey"
+            columns: ["boss_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_characters_common_drop_fkey"
+            columns: ["common_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_characters_local_specialty_fkey"
+            columns: ["local_specialty"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_characters_talent_book_fkey"
+            columns: ["talent_book"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_characters_weekly_drop_fkey"
+            columns: ["weekly_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          }
+        ]
+      }
+      genshin_domains: {
+        Row: {
+          all_drops: string[]
+          change_daily: boolean
+          domain_name: string
+          domain_type: string
+          id: number
+          mt_drop: string | null
+          tf_drop: string | null
+          ws_drop: string | null
+        }
+        Insert: {
+          all_drops: string[]
+          change_daily: boolean
+          domain_name: string
+          domain_type: string
+          id?: number
+          mt_drop?: string | null
+          tf_drop?: string | null
+          ws_drop?: string | null
+        }
+        Update: {
+          all_drops?: string[]
+          change_daily?: boolean
+          domain_name?: string
+          domain_type?: string
+          id?: number
+          mt_drop?: string | null
+          tf_drop?: string | null
+          ws_drop?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_genshin_domains_mt_drop_fkey"
+            columns: ["mt_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_domains_tf_drop_fkey"
+            columns: ["tf_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_domains_ws_drop_fkey"
+            columns: ["ws_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          }
+        ]
+      }
+      genshin_fish: {
+        Row: {
+          bait: string
+          fish_name: string
+          fish_name_long: string
+          id: number
+          time_of_day: string | null
+          timed: boolean
+        }
+        Insert: {
+          bait: string
+          fish_name: string
+          fish_name_long: string
+          id?: number
+          time_of_day?: string | null
+          timed: boolean
+        }
+        Update: {
+          bait?: string
+          fish_name?: string
+          fish_name_long?: string
+          id?: number
+          time_of_day?: string | null
+          timed?: boolean
+        }
+        Relationships: []
+      }
+      genshin_furnishing: {
+        Row: {
+          adeptal_energy: number
+          blueprint: boolean
+          category: string
+          furnishing_name: string
+          furnishing_name_long: string
+          id: number
+          item_load: number
+          load_reduced: number
+          materials: Json | null
+          obtained: string
+          rarity: number
+          sub_category: string
+        }
+        Insert: {
+          adeptal_energy: number
+          blueprint: boolean
+          category: string
+          furnishing_name: string
+          furnishing_name_long: string
+          id?: number
+          item_load: number
+          load_reduced: number
+          materials?: Json | null
+          obtained: string
+          rarity: number
+          sub_category: string
+        }
+        Update: {
+          adeptal_energy?: number
+          blueprint?: boolean
+          category?: string
+          furnishing_name?: string
+          furnishing_name_long?: string
+          id?: number
+          item_load?: number
+          load_reduced?: number
+          materials?: Json | null
+          obtained?: string
+          rarity?: number
+          sub_category?: string
+        }
+        Relationships: []
+      }
+      genshin_furnishingset: {
+        Row: {
+          favor_chars: string[] | null
+          gift_set: boolean
+          id: number
+          required_items: Json
+          set_name: string
+          set_name_long: string
+        }
+        Insert: {
+          favor_chars?: string[] | null
+          gift_set: boolean
+          id?: number
+          required_items: Json
+          set_name: string
+          set_name_long: string
+        }
+        Update: {
+          favor_chars?: string[] | null
+          gift_set?: boolean
+          id?: number
+          required_items?: Json
+          set_name?: string
+          set_name_long?: string
+        }
+        Relationships: []
+      }
+      genshin_items: {
+        Row: {
+          dropped_by: string[] | null
+          farm_day: Json | null
+          id: number
+          item_type: string
+          long_name: Json
+          short_name: string
+        }
+        Insert: {
+          dropped_by?: string[] | null
+          farm_day?: Json | null
+          id?: number
+          item_type: string
+          long_name: Json
+          short_name: string
+        }
+        Update: {
+          dropped_by?: string[] | null
+          farm_day?: Json | null
+          id?: number
+          item_type?: string
+          long_name?: Json
+          short_name?: string
+        }
+        Relationships: []
+      }
+      genshin_spincrystal: {
+        Row: {
+          id: number
+          source: string
+          unlocked_track: string
+        }
+        Insert: {
+          id?: number
+          source: string
+          unlocked_track: string
+        }
+        Update: {
+          id?: number
+          source?: string
+          unlocked_track?: string
+        }
+        Relationships: []
+      }
+      genshin_traveler: {
+        Row: {
+          common_drop: string
+          constellation_3: string
+          constellation_5: string
+          constellations: Json
+          element: string
+          id: number
+          release: string
+          talent_1: string
+          talent_2: string
+          talent_3: string
+          talents: Json
+          version: number
+          weekly_drop: string
+        }
+        Insert: {
+          common_drop: string
+          constellation_3: string
+          constellation_5: string
+          constellations: Json
+          element: string
+          id?: number
+          release: string
+          talent_1: string
+          talent_2: string
+          talent_3: string
+          talents: Json
+          version: number
+          weekly_drop: string
+        }
+        Update: {
+          common_drop?: string
+          constellation_3?: string
+          constellation_5?: string
+          constellations?: Json
+          element?: string
+          id?: number
+          release?: string
+          talent_1?: string
+          talent_2?: string
+          talent_3?: string
+          talents?: Json
+          version?: number
+          weekly_drop?: string
         }
         Relationships: []
       }
       genshin_weapons: {
         Row: {
-          ascension_material: string | null
-          atk: Json | null
-          common_drop: string | null
-          description: string | null
+          ascension_material: string
+          atk: Json
+          common_drop: string
           id: number
-          name: string | null
-          obtained: string | null
-          passive: Json | null
-          rare_drop: string | null
-          rarity: number | null
-          release: string | null
-          sub_stat: Json | null
-          type: string | null
-          version: number | null
+          obtained: string
+          passive: Json
+          rare_drop: string
+          rarity: number
+          release: string
+          sub_stat: Json
+          version: number
+          weapon_description: string
+          weapon_name: string | null
+          weapon_name_long: string
+          weapon_type: string
         }
         Insert: {
-          ascension_material?: string | null
-          atk?: Json | null
-          common_drop?: string | null
-          description?: string | null
-          id: number
-          name?: string | null
-          obtained?: string | null
-          passive?: Json | null
-          rare_drop?: string | null
-          rarity?: number | null
-          release?: string | null
-          sub_stat?: Json | null
-          type?: string | null
-          version?: number | null
+          ascension_material: string
+          atk?: Json
+          common_drop: string
+          id?: number
+          obtained: string
+          passive?: Json
+          rare_drop: string
+          rarity: number
+          release: string
+          sub_stat?: Json
+          version: number
+          weapon_description: string
+          weapon_name?: string | null
+          weapon_name_long: string
+          weapon_type: string
         }
         Update: {
-          ascension_material?: string | null
-          atk?: Json | null
-          common_drop?: string | null
-          description?: string | null
+          ascension_material?: string
+          atk?: Json
+          common_drop?: string
           id?: number
-          name?: string | null
-          obtained?: string | null
-          passive?: Json | null
-          rare_drop?: string | null
-          rarity?: number | null
-          release?: string | null
-          sub_stat?: Json | null
-          type?: string | null
-          version?: number | null
+          obtained?: string
+          passive?: Json
+          rare_drop?: string
+          rarity?: number
+          release?: string
+          sub_stat?: Json
+          version?: number
+          weapon_description?: string
+          weapon_name?: string | null
+          weapon_name_long?: string
+          weapon_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_genshin_weapons_ascension_material_fkey"
+            columns: ["ascension_material"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_weapons_common_drop_fkey"
+            columns: ["common_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          },
+          {
+            foreignKeyName: "public_genshin_weapons_rare_drop_fkey"
+            columns: ["rare_drop"]
+            isOneToOne: false
+            referencedRelation: "genshin_items"
+            referencedColumns: ["short_name"]
+          }
+        ]
+      }
+      genshin_weekly: {
+        Row: {
+          domain_name: string
+          id: number
+          other_drops: string[]
+          weekly_drops: string[]
+          weekly_name: string
+          weekly_name_long: string
+        }
+        Insert: {
+          domain_name: string
+          id?: number
+          other_drops: string[]
+          weekly_drops: string[]
+          weekly_name: string
+          weekly_name_long: string
+        }
+        Update: {
+          domain_name?: string
+          id?: number
+          other_drops?: string[]
+          weekly_drops?: string[]
+          weekly_name?: string
+          weekly_name_long?: string
+        }
+        Relationships: []
+      }
+      tcg_action: {
+        Row: {
+          card_effect: string
+          card_group: string[] | null
+          card_name: string
+          card_name_long: string
+          card_type: string
+          cost: Json
+          has_requirements: boolean
+          id: number
+          requirements: Json | null
+        }
+        Insert: {
+          card_effect: string
+          card_group?: string[] | null
+          card_name: string
+          card_name_long: string
+          card_type: string
+          cost: Json
+          has_requirements: boolean
+          id?: number
+          requirements?: Json | null
+        }
+        Update: {
+          card_effect?: string
+          card_group?: string[] | null
+          card_name?: string
+          card_name_long?: string
+          card_type?: string
+          cost?: Json
+          has_requirements?: boolean
+          id?: number
+          requirements?: Json | null
+        }
+        Relationships: []
+      }
+      tcg_characters: {
+        Row: {
+          char_name: string
+          char_name_long: string
+          element: string
+          faction: string
+          health: number
+          id: number
+          skills: Json
+          talent_card: string
+          weapon_type: string
+        }
+        Insert: {
+          char_name: string
+          char_name_long: string
+          element: string
+          faction: string
+          health: number
+          id?: number
+          skills: Json
+          talent_card: string
+          weapon_type: string
+        }
+        Update: {
+          char_name?: string
+          char_name_long?: string
+          element?: string
+          faction?: string
+          health?: number
+          id?: number
+          skills?: Json
+          talent_card?: string
+          weapon_type?: string
         }
         Relationships: []
       }
