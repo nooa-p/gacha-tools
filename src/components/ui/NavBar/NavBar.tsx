@@ -1,8 +1,9 @@
 'use client'
 import { useState } from "react"
-import { IconUsers, IconSword, IconListCheck, IconPackage, IconTrophy, IconSettings, IconFeather, IconCalendar, IconFishHook, IconCards, IconArmchair, IconSwitchHorizontal } from "@tabler/icons-react"
-import { Tooltip, Stack, UnstyledButton, rem } from "@mantine/core"
+import { IconUsers, IconSword, IconListCheck, IconPackage, IconTrophy, IconSettings, IconFeather, IconCalendar, IconFishHook, IconCards, IconArmchair, IconSwitchHorizontal, IconNorthStar } from "@tabler/icons-react"
+import { Tooltip, Stack, UnstyledButton, rem, Center } from "@mantine/core"
 import classes from './NavBar.module.css'
+import Link from "next/link"
 
 interface NavBarLinkProps {
   icon: typeof IconUsers
@@ -49,7 +50,12 @@ export function NavBar() {
 
   return (
     <nav className={classes.navbar}>
-      <Stack justify="center">
+      <Center>
+        <Link href={'/'}>
+          <IconNorthStar />
+        </Link>
+      </Center>
+      <Stack justify="center" gap={5}>
         {links}
       </Stack>
 
