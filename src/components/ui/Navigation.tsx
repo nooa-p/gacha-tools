@@ -3,9 +3,9 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { IconMenu2, IconUsers, IconSword, IconFeather, IconListCheck, IconBox, IconFishHook, IconCards, IconArmchair, IconMusic, IconCalendar, IconSettings } from "@tabler/icons-react"
-import { Courgette } from "next/font/google"
+import { Playpen_Sans } from "next/font/google"
 
-const courgette = Courgette({ weight: '400', subsets: ['latin'] })
+const playpen = Playpen_Sans({ weight: '700', subsets: ['latin'] })
 
 const navdata_one = [
   { href: '/', icon: IconUsers, label: 'Characters' },
@@ -35,9 +35,9 @@ function NavBar() {
           <Link 
             href={link.href}
             key={link.label}
-            className="flex flex-row text-lg font-light py-2.5 px-3 gap-3 items-center rounded"
+            className="flex flex-row text-lg font-semibold py-2.5 px-3 gap-3 items-center rounded hover:text-white"
           >
-            <link.icon />
+            <link.icon stroke={2} />
             <span>{link.label}</span>
           </Link>
       )})
@@ -45,7 +45,7 @@ function NavBar() {
   }
   return (
     <div className="w-80 h-screen bg-periwinkle-950 flex flex-col items-center py-5 gap-12">
-      <h1 className={courgette.className + " text-3xl"}>
+      <h1 className={playpen.className + " text-3xl text-center max-w-72"}>
         Traveler&apos;s Handbook
       </h1>
       <div className="flex flex-col w-10/12">

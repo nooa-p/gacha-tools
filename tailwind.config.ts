@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+// todo: insert catpuccin colors
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,18 +13,18 @@ const config: Config = {
     extend: {
       colors: {
         'periwinkle': {
-          50: '#f9f6fe',
-          100: '#f0eafb',
-          200: '#e6dcf9',
-          300: '#d9ceee',
-          400: '#bda9e0',
-          500: '#a286d0',
-          600: '#8c6cbc',
-          700: '#7556a4',
-          800: '#644c85',
-          900: '#54406d',
-          950: '#372353',
-        }
+          50: '#e6edfa',
+          100: '#dbe1f6',
+          200: '#cdd0f4',
+          300: '#c4c2e5',
+          400: '#ab9fd6',
+          500: '#9a7ec4',
+          600: '#8e67ad',
+          700: '#7f578e',
+          800: '#6d4b71',
+          900: '#5b3e5a',
+          950: '#41203b',
+      }
       }
     },
   },
