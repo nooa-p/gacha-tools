@@ -2,22 +2,34 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { IconMenu2, IconUsers, IconSword, IconFeather, IconListCheck, IconBox, IconFishHook, IconCards, IconArmchair, IconMusic, IconCalendar, IconSettings, IconSwitchHorizontal } from "@tabler/icons-react"
+import { IconMenu2, IconUsers, IconSword, IconFeather, IconListCheck, IconBox, IconFishHook, IconCards, IconArmchair, IconMusic, IconCalendar, IconSettings } from "@tabler/icons-react"
 
-const navdata = [
+const navdata_one = [
   { link: '/', icon: IconUsers, label: 'Characters' },
   { link: '/', icon: IconSword, label: 'Weapons' },
   { link: '/', icon: IconFeather, label: 'Artifacts' },
   { link: '/', icon: IconListCheck, label: 'Planner' },
   { link: '/', icon: IconBox, label: 'Inventory' },
+]
+
+const navdata_two = [
   { link: '/', icon: IconFishHook, label: 'Fishing' },
   { link: '/', icon: IconCards, label: 'TCG' },
   { link: '/', icon: IconArmchair, label: 'Furnishing' },
-  { link: '/', icon: IconMusic, label: 'Spincrystals' },
-  { link: '/', icon: IconCalendar, label: 'Calendar' },
-  { link: '/', icon: IconSettings, label: 'Settings' },
-  { link: '/', icon: IconSwitchHorizontal, label: 'Switch game' }
+  { link: '/', icon: IconMusic, label: 'Spincrystals' }
 ]
+
+const navdata_three = [
+  { link: '/', icon: IconCalendar, label: 'Calendar' }
+]
+
+function NavBar() {
+  return (
+    <div className="w-80 h-screen">
+
+    </div>
+  )
+}
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,8 +53,8 @@ export default function Navigation() {
   return  (
     <>
       {isDesktop ? (
-        <nav className="w-80 h-screen">
-          
+        <nav>
+          <NavBar />
         </nav>
       ) : (
         <IconMenu2 />
