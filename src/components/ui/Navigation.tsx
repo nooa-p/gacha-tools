@@ -35,7 +35,7 @@ function NavBar() {
           <Link 
             href={link.href}
             key={link.label}
-            className="flex flex-row text-lg font-light py-2.5 px-3 gap-3 items-center bg-slate-700 rounded"
+            className="flex flex-row text-lg font-light py-2.5 px-3 gap-3 items-center rounded"
           >
             <link.icon />
             <span>{link.label}</span>
@@ -48,14 +48,14 @@ function NavBar() {
       <h1 className={courgette.className + " text-3xl"}>
         Traveler&apos;s Handbook
       </h1>
-      <div className="flex flex-col gap-4 w-10/12">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col w-10/12">
+        <div className="flex flex-col gap-2 pb-2">
         {returnLinks(navdata_one)}
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 py-2 border-t border-dashed border-periwinkle-500">
         {returnLinks(navdata_two)}
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 pt-2 border-t border-dashed border-periwinkle-500">
         {returnLinks(navdata_three)}
         </div>
       </div>
