@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-periwinkle-900 text-periwinkle-100">{children}</body>
+      <body className="bg-base text-text">{children}</body>
     </html>
   );
 }

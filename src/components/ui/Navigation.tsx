@@ -3,9 +3,9 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { IconMenu2, IconUsers, IconSword, IconFeather, IconListCheck, IconBox, IconFishHook, IconCards, IconArmchair, IconMusic, IconCalendar, IconSettings } from "@tabler/icons-react"
-import { Playpen_Sans } from "next/font/google"
+import { Edu_SA_Beginner } from "next/font/google"
 
-const playpen = Playpen_Sans({ weight: '700', subsets: ['latin'] })
+const eduSA = Edu_SA_Beginner({ weight: '700', subsets: ['latin'] })
 
 const navdata_one = [
   { href: '/', icon: IconUsers, label: 'Characters' },
@@ -28,35 +28,35 @@ const navdata_three = [
 ]
 
 function NavBar() {
-  const returnLinks = (links: Array<{ href: string, icon: typeof IconMenu2, label: string }>) => {
+  const returnLinks = (links: Array<{ href: string, icon: typeof IconMenu2, label: string }>, icon_color: string, hover_color: string) => {
     return (
       links.map(link => {
         return (
           <Link 
             href={link.href}
             key={link.label}
-            className="flex flex-row text-lg font-semibold py-2.5 px-3 gap-3 items-center rounded hover:text-white"
+            className={"flex flex-row text-lg font-semibold py-2.5 px-3 gap-3 items-center rounded transition duration-200 ease-in hover:text-mantle group " + hover_color}
           >
-            <link.icon stroke={2} />
+            <link.icon stroke={2} className={icon_color + " group-hover:text-mantle transition duration-200 ease-in"} />
             <span>{link.label}</span>
           </Link>
       )})
     )
   }
   return (
-    <div className="w-80 h-screen bg-periwinkle-950 flex flex-col items-center py-5 gap-12">
-      <h1 className={playpen.className + " text-3xl text-center max-w-72"}>
+    <div className="w-80 h-screen bg-mantle flex flex-col items-center py-10 gap-10">
+      <h1 className={eduSA.className + " text-3xl text-center max-w-56"}>
         Traveler&apos;s Handbook
       </h1>
       <div className="flex flex-col w-10/12">
         <div className="flex flex-col gap-2 pb-2">
-        {returnLinks(navdata_one)}
+        {returnLinks(navdata_one, "text-flamingo", "hover:bg-flamingo")}
         </div>
-        <div className="flex flex-col gap-2 py-2 border-t border-dashed border-periwinkle-500">
-        {returnLinks(navdata_two)}
+        <div className="flex flex-col gap-2 py-2 border-t border-dashed border-surface-light">
+        {returnLinks(navdata_two, "text-teal", "hover:bg-teal")}
         </div>
-        <div className="flex flex-col gap-2 pt-2 border-t border-dashed border-periwinkle-500">
-        {returnLinks(navdata_three)}
+        <div className="flex flex-col gap-2 pt-2 border-t border-dashed border-surface-light">
+        {returnLinks(navdata_three, "text-lavender", "hover:bg-lavender")}
         </div>
       </div>
       <div className="mt-auto">
