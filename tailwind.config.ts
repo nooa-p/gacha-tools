@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-// todo: insert catpuccin colors
+// todo: remove unused colors
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,22 +10,43 @@ const config: Config = {
     fontFamily: {
       sans: ['Inter', 'sans-serif']
     },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'base': '#1e1e2e',
+      'crust': '#11111b',
+      'mantle': '#181825',
+      'surface': {
+        'light': '#585b70',
+        DEFAULT: '#45475a',
+        'dark': '#313244'
+      },
+      'overlay': {
+        'light': '#9399b2',
+        DEFAULT: '#7f849c',
+        'dark': '#6c7086'
+      },
+      'text': '#cdd6f4',
+      'subtext': {
+        'light': '#bac2de',
+        'dark': '#a6adc8'
+      },
+      'rosewater': '#f5e0dc',
+      'flamingo': '#f2cdcd',
+      'pink': '#f5c2e7',
+      'mauve': '#cba6f7',
+      'red': '#f38ba8',
+      'maroon': '#eba0ac',
+      'peach': '#fab387',
+      'yellow': '#f9e2af',
+      'green': '#a6e3a1',
+      'teal': '#94e2d5',
+      'sky': '#89dceb',
+      'sapphire': '#74c7ec',
+      'blue': '#89b4fa',
+      'lavender': '#b4befe'
+    },
     extend: {
-      colors: {
-        'periwinkle': {
-          50: '#e6edfa',
-          100: '#dbe1f6',
-          200: '#cdd0f4',
-          300: '#c4c2e5',
-          400: '#ab9fd6',
-          500: '#9a7ec4',
-          600: '#8e67ad',
-          700: '#7f578e',
-          800: '#6d4b71',
-          900: '#5b3e5a',
-          950: '#41203b',
-      }
-      }
     },
   },
   plugins: [],
